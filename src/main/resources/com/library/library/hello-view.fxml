@@ -4,23 +4,36 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.library.library.HelloController">
-  <Label text="Dodaj nową książkę" />
-  <TextField fx:id="titleField" promptText="Tytuł" />
-  <TextField fx:id="authorField" promptText="Autor" />
-  <TextField fx:id="yearField" promptText="Rok wydania" />
-  <TextField fx:id="genreField" promptText="Gatunek" />
-  <Button text="Dodaj" onAction="#addBook" />
+<VBox spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.library.HelloController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
 
-  <Label text="Wyszukaj książki" />
-  <TextField fx:id="titleField" promptText="Tytuł" />
-  <TextField fx:id="authorField" promptText="Autor" />
-  <TextField fx:id="yearField" promptText="Rok wydania" />
-  <TextField fx:id="genreField" promptText="Gatunek" />
-  <Button text="Wyszukaj" onAction="#searchBooks" />
+    <Label text="Dodaj/Edytuj książkę" />
+    <TextField fx:id="titleField" promptText="Tytuł" />
+    <TextField fx:id="authorField" promptText="Autor" />
+    <TextField fx:id="yearField" promptText="Rok wydania" />
+    <TextField fx:id="genreField" promptText="Gatunek" />
+    <Button text="Dodaj" onAction="#addBook" fx:id="addButton" />
+    <Button text="Zapisz zmiany" onAction="#updateBook" fx:id="saveButton" visible="false" />
 
-  <ListView fx:id="bookListView" />
-  <Button text="Usuń" onAction="#removeBook" />
+    <Label text="Wyszukaj książki" />
+    <TextField fx:id="searchTitleField" promptText="Tytuł" />
+    <TextField fx:id="searchAuthorField" promptText="Autor" />
+    <TextField fx:id="searchYearField" promptText="Rok wydania" />
+    <TextField fx:id="searchGenreField" promptText="Gatunek" />
+    <Button text="Wyszukaj" onAction="#searchBooks" />
+
+    <TableView fx:id="bookTableView">
+        <columns>
+            <TableColumn fx:id="titleColumn" text="Tytuł" />
+            <TableColumn fx:id="authorColumn" text="Autor" />
+            <TableColumn fx:id="yearColumn" text="Rok wydania" />
+            <TableColumn fx:id="genreColumn" text="Gatunek" />
+        </columns>
+    </TableView>
+    <HBox spacing="10">
+        <Button text="Usuń" onAction="#removeBook" />
+        <Button text="Edytuj" onAction="#editBook" />
+    </HBox>
 </VBox>
