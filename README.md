@@ -71,8 +71,8 @@ INSERT INTO books (title, author, year, genre) VALUES
 Sklonuj repozytorium:
 
 ```shell
-git clone https://github.com/yourusername/book-management-system.git
-cd book-management-system
+git clone https://github.com/JustynaBoksz/library
+cd library
 ```
 
 Skonfiguruj połączenie z bazą danych. Otwórz plik `BookDAO.java` i zaktualizuj szczegóły połączenia z bazą danych:
